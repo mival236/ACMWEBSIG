@@ -1,0 +1,79 @@
+.arw-btn {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(22, 22, 25, 0.65);
+  color: #f4f4f5;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    color 0.35s ease;
+  font-family: inherit;
+}
+
+.arw-glyph {
+  font-size: 26px;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: transform 0.35s ease;
+}
+
+.arw-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 138, 40, 0);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.arw-btn:hover {
+  color: #ffb072;
+  border-color: rgba(255, 138, 40, 0.55);
+  background: rgba(28, 18, 10, 0.75);
+  transform: scale(1.06);
+  box-shadow: 0 0 22px rgba(255, 138, 40, 0.28);
+}
+
+.arw-btn:hover .arw-ring {
+  border-color: rgba(255, 138, 40, 0.35);
+  box-shadow: 0 0 0 4px rgba(255, 138, 40, 0.08);
+}
+
+.arw-btn:active {
+  transform: scale(0.94);
+}
+
+.arw-left:hover .arw-glyph {
+  transform: translate(-3px, -1px);
+}
+.arw-right:hover .arw-glyph {
+  transform: translate(3px, -1px);
+}
+
+.arw-btn:focus-visible {
+  outline: 2px solid rgba(255, 138, 40, 0.6);
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .arw-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .arw-glyph {
+    font-size: 22px;
+  }
+}

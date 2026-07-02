@@ -1,0 +1,203 @@
+.prj-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 24px 80px;
+  background: #08080a;
+  color: #f4f4f5;
+  overflow: hidden;
+  isolation: isolate;
+  font-family:
+    \"Inter Tight\", \"Söhne\", \"Neue Haas Grotesk\", \"Helvetica Neue\", Arial,
+    sans-serif;
+}
+
+/* Background layers */
+.prj-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.prj-glow {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+}
+
+.prj-glow-a {
+  top: -280px;
+  left: -260px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 138, 40, 0.55) 0%,
+    rgba(255, 138, 40, 0) 60%
+  );
+}
+
+.prj-glow-b {
+  bottom: -320px;
+  right: -220px;
+  width: 780px;
+  height: 780px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 106, 26, 0.4) 0%,
+    rgba(255, 106, 26, 0) 60%
+  );
+  opacity: 0.28;
+}
+
+.prj-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 68px 68px;
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 30%,
+    transparent 75%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 30%,
+    transparent 75%
+  );
+  opacity: 0.55;
+}
+
+.prj-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.prj-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 176, 114, 0.55);
+  box-shadow: 0 0 8px rgba(255, 138, 40, 0.6);
+  animation: prj-float linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes prj-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(-30px, -60px, 0);
+    opacity: 0;
+  }
+}
+
+/* Header */
+.prj-header {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.prj-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffb072;
+  background: rgba(255, 138, 40, 0.08);
+  border: 1px solid rgba(255, 138, 40, 0.28);
+}
+
+.prj-kicker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff8a28;
+  box-shadow: 0 0 10px rgba(255, 138, 40, 0.9);
+}
+
+.prj-heading {
+  margin: 22px 0 14px;
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  font-family: \"Fraunces\", \"PP Editorial New\", Georgia, serif;
+}
+
+.prj-heading-accent {
+  color: #ff8a28;
+  font-style: italic;
+  font-weight: 500;
+  text-shadow: 0 0 32px rgba(255, 138, 40, 0.35);
+}
+
+.prj-subtitle {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #a3a3a8;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.prj-controls {
+  position: relative;
+  z-index: 2;
+}
+
+.prj-footnote {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+  color: #737378;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.prj-footnote-sep {
+  color: rgba(255, 138, 40, 0.7);
+}
+
+@media (max-width: 720px) {
+  .prj-section {
+    padding: 90px 16px 60px;
+  }
+  .prj-heading {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+  .prj-subtitle {
+    font-size: 14px;
+  }
+}
